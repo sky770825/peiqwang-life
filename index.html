@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@pei_qwang — 奶茶即生活</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #D4956A;
+      --primary-dark: #B87A50;
+      --bg: #FDF8F3;
+      --text: #3D2B20;
+      --accent: #7BA88B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(160deg, var(--bg) 0%, #F5EDE4 100%);
+    }
+
+    .hero-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .hero-account {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--primary-dark);
+      margin-bottom: 40px;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== 精選推薦 ===== */
+    .recommends {
+      background: #fff;
+    }
+
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .recommend-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg);
+      box-shadow: 0 4px 20px rgba(61, 43, 32, 0.08);
+    }
+
+    .recommend-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .recommend-card-body {
+      padding: 20px;
+    }
+
+    .recommend-card h3 {
+      font-size: 20px;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .recommend-card p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== 生活態度 ===== */
+    .lifestyle {
+      background: var(--bg);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .quote-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .quote-card .date {
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 12px;
+    }
+
+    /* =====社群連結=====*/
+    .social {
+      background: #fff;
+      text-align: center;
+    }
+
+    .social-desc {
+      margin-bottom: 32px;
+      opacity: 0.8;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .social-btn.threads {
+      background: #000;
+    }
+
+    .social-btn.instagram {
+      background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    /* ===== RWD 768px ===== */
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 56px;
+      }
+
+      .recommend-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-links {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=80" alt="奶茶" class="hero-avatar">
+    <h1>奶茶即生活</h1>
+    <p class="hero-tagline">不只是喝奶茶，是一種生活態度</p>
+    <p class="hero-account">@pei_qwang</p>
+  </section>
+
+  <!-- 精選推薦 -->
+  <section class="recommends">
+    <div class="container">
+      <h2 class="section-title">精選推薦</h2>
+      <div class="recommend-grid">
+        <div class="recommend-card">
+          <img src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=600&q=80" alt="60+ 奶茶">
+          <div class="recommend-card-body">
+            <span class="tag">奶茶</span>
+            <h3>60+ 手搖茶飲</h3>
+            <p>每天都要來一杯的儀式感，60+ 是我回購無數次的口袋名單。</p>
+          </div>
+        </div>
+        <div class="recommend-card">
+          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80" alt="ORIANCA TEASHOP">
+          <div class="recommend-card-body">
+            <span class="tag">茶店</span>
+            <h3>ORIANCA TEASHOP</h3>
+            <p>風格與味道兼顧的茶店，茶香濃郁，值得一訪再訪。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 生活態度 -->
+  <section class="lifestyle">
+    <div class="container">
+      <h2 class="section-title">生活態度</h2>
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p>「今天靠一杯奶茶撐過開會日，誰懂。」</p>
+          <p class="date">日常隨筆</p>
+        </div>
+        <div class="quote-card">
+          <p>「棒球季開始了，喝著奶茶看球賽，最Chill的週末。」</p>
+          <p class="date">棒球日常</p>
+        </div>
+        <div class="quote-card">
+          <p>「找到一款好喝的茶，比找到好餐廳還有成就感。」</p>
+          <p class="date">茶飲研究所</p>
+        </div>
+        <div class="quote-card">
+          <p>「生活再忙，也要記得給自己一杯茶的時間。」</p>
+          <p class="date">生活美學</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社群連結 -->
+  <section class="social">
+    <div class="container">
+      <h2 class="section-title">追蹤我</h2>
+      <p class="social-desc">奶茶、生活、棒球，歡迎來玩</p>
+      <div class="social-links">
+        <a href="https://www.threads.net/@pei_qwang" target="_blank" class="social-btn threads">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.177.408-2.157 1.344-2.773.873-.576 2.023-.876 3.278-.852.247.004.494.018.742.043h.034c.329-.003.659-.029.992-.043 1.853-.08 3.611.48 4.938 1.574 1.453 1.196 2.36 2.878 2.57 4.762.168 1.511-.173 2.997-1.01 4.3-1.223 1.907-3.165 3.1-5.516 3.373z"/></svg>
+          Threads
+        </a>
+        <a href="https://www.instagram.com/pei_qwang" target="_blank" class="social-btn instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 @pei_qwang — 奶茶即生活
+  </footer>
+
+</body>
+</html>
